@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  tssc/gitops: import-tests-go-zrgqclgr-workflow 
+  janus-idp.io/tekton: import-tests-go-zrgqclgr-workflow
+  backstage.io/kubernetes-id: import-tests-go-zrgqclgr-workflow
+  backstage.io/kubernetes-namespace: tssc-app 
+  app.kubernetes.io/part-of: import-tests-go-zrgqclgr-workflow
+resources:
+  - ci-tekton.yaml
+  - application-dev.yaml
+  - application-stage.yaml
+  - application-prod.yaml
